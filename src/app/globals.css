@@ -1,0 +1,11 @@
+h1 a {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 10px;
+}
