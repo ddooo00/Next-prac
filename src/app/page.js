@@ -6,7 +6,7 @@ export default function Home() {
       <h2>Welcome</h2>
       Hello, WEB!
       <br></br>
-      <img src="/screenshot.png"></img>
+      <img style={{ width: "250px" }} src="/screenshot.jpeg"></img>
     </>
   );
 }
