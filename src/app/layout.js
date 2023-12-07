@@ -18,7 +18,11 @@ export default async function RootLayout({ children }) {
   //   .then((result) => {
   //     setTopics(result);
   //   });
-  const resp = await fetch("http:localhost:9999/topics");
+  const resp = await fetch("http:localhost:9999/topics", {
+    cache: "no-store",
+    //cache를 쓰지 않겠다.
+  });
+  //next에서는fetch를 사용하면 한번 가져온 정보를 저장함
   const topics = await resp.json();
   //정적인 내용만 next로 전송되니까 용량이 적음(js를 적용하지 않아서) , 이미 받은걸 렌더링하기 때문에 js disabled 되어도 잘 동작함
   // }, []);

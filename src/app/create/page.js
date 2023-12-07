@@ -26,6 +26,8 @@ export default function Create() {
             console.log(result);
             const lastid = result.id;
             router.push(`/read/${lastid}`);
+            router.refresh();
+            //글 목록 담당하고 있는 fetch가 no-cache를 하기 때문에 router.refresh를 하면 새로운 데이터를 가져와서 뿌려줌.
           });
       }}
     >

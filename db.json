@@ -11,28 +11,14 @@
       "body": "css is ..."
     },
     {
+      "title": "react",
+      "body": "react is ..",
       "id": 3
     },
     {
+      "title": "next",
+      "body": "next is ..",
       "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "title": "ㅋㅋㅋ",
-      "body": "ㅋㅋㅋ",
-      "id": 6
-    },
-    {
-      "title": "react",
-      "body": "react is ..",
-      "id": 7
-    },
-    {
-      "title": "vue",
-      "body": "vue is ..",
-      "id": 8
     }
   ],
   "posts": [
