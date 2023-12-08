@@ -1,5 +1,6 @@
 // "use client"; //client compo로 하면 js가 disabled되면 useEffect같은 부분은 작동이 안됨 => server compo로 변경해야함! + 보안적으로
 // import { useEffect, useState } from "react";
+import { Control } from "./Control";
 import "./globals.css";
 import Link from "next/link";
 //meta는 server compo에서만 사용 가능
@@ -42,17 +43,7 @@ export default async function RootLayout({ children }) {
           })}
         </ol>
         {children}
-        <ul>
-          <li>
-            <Link href="/create">Create</Link>
-          </li>
-          <li>
-            <Link href="/update/1">Update</Link>
-          </li>
-          <li>
-            <input type="button" value="delete" />
-          </li>
-        </ul>
+        <Control />
       </body>
     </html>
   );
