@@ -19,9 +19,15 @@ export default async function RootLayout({ children }) {
   //   .then((result) => {
   //     setTopics(result);
   //   });
-  const resp = await fetch("http:localhost:9999/topics", {
+
+  // const resp = await fetch("http:localhost:9999/topics", {
+  //   cache: "no-store",
+  //   //cache를 쓰지 않겠다.
+  // });
+
+  //환경변수에서  주소 가져옴(서버컴포넌트에서만 기본적으로는 사용 가능)
+  const resp = await fetch(process.env.NEXT_PUBLIC_API_URL + "topics", {
     cache: "no-store",
-    //cache를 쓰지 않겠다.
   });
   //next에서는fetch를 사용하면 한번 가져온 정보를 저장함
   const topics = await resp.json();
