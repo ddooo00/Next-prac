@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
-//id값을 가져와야 해서 useParams 사용 => 하지만 이건 server에서는 사용 xx(레이아웃.js)
-//그래서 up, de 두개만 가져와서 client로 변경시켜 params사용함.
 export function Control() {
   const params = useParams();
+  const router = useRouter();
+
   const id = params.id;
+
   return (
     <ul>
       <li>
@@ -18,7 +19,19 @@ export function Control() {
             <Link href={"/update/" + id}>Update</Link>
           </li>
           <li>
-            <input type="button" value="delete" />
+            <input
+              type="button"
+              value="delete"
+              onClick={() => {
+                const options = { method: "DELETE" };
+                fetch("http://localhost:9999/topics/" + id, options)
+                  .then((resp) => resp.json())
+                  .then((result) => {
+                    router.push("/");
+                    router.refresh();
+                  });
+              }}
+            />
           </li>
         </>
       ) : null}
